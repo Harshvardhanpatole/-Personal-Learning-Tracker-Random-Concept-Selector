@@ -1,0 +1,2 @@
+import Modal from './Modal';
+export default function ConfirmationModal({ open, onClose, onConfirm, title = 'Are you sure?', description, confirmLabel = 'Delete', busy = false }) { return <Modal open={open} onClose={onClose} title={title}><p className="text-sm leading-6 text-slate-600">{description}</p><div className="mt-6 flex justify-end gap-3"><button className="btn-ghost" onClick={onClose}>Cancel</button><button className="btn bg-rose-600 text-white hover:bg-rose-700" disabled={busy} onClick={onConfirm}>{busy ? 'Working…' : confirmLabel}</button></div></Modal>; }

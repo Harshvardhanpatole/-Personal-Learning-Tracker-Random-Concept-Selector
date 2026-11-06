@@ -1,0 +1,16 @@
+{
+  "name": "personal-learning-tracker",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node ./node_modules/concurrently/dist/bin/concurrently.js \"node --watch server/src/server.js\" \"powershell -NoProfile -Command \\\"Set-Location client; node .\\node_modules\\vite\\bin\\vite.js\\\"\"",
+    "server": "node --watch server/src/server.js",
+    "client": "powershell -NoProfile -Command \"Set-Location client; node .\\node_modules\\vite\\bin\\vite.js\"",
+    "migrate": "node server/src/db/migrate.js",
+    "build": "powershell -NoProfile -Command \"Set-Location client; node .\\node_modules\\vite\\bin\\vite.js build\"",
+    "test": "node --test server/test/*.test.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
